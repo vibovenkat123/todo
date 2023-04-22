@@ -17,7 +17,7 @@ func list(cmd *cobra.Command, args []string) {
 	todos, err := helpers.Application.GetAllTodos()
 	if err != nil {
 		fmt.Fprint(os.Stderr, err)
-		return
+		os.Exit(1)
 	}
 	if len(todos) == 0 {
 		fmt.Println("No todos!")
@@ -25,7 +25,7 @@ func list(cmd *cobra.Command, args []string) {
 	}
 	fmt.Println("Todos:")
 	for _, todo := range todos {
-		fmt.Printf("%d. %s\n", todo.ID, todo.Name)
+		fmt.Printf("%s, id=%d\n", todo.Name, todo.ID)
 	}
 }
 

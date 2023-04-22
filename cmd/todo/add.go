@@ -11,7 +11,7 @@ import (
 
 var addCmd = &cobra.Command{
 	Use:     "add",
-	Aliases: []string{"create"},
+	Aliases: []string{"create", "touch", "make", "mk"},
 	Short:   "Create a todo",
 	Args: cobra.MinimumNArgs(1),
 	Run:     add,
@@ -22,7 +22,7 @@ func add(cmd *cobra.Command, args []string) {
 	err := helpers.Application.InsertTodo(name)
 	if err != nil {
 		fmt.Fprint(os.Stderr, err)
-		return
+		os.Exit(1)
 	}
 }
 
