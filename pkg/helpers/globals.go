@@ -7,7 +7,7 @@ import (
 
 type Todo struct {
 	Name string
-	ID int
+	ID   int
 }
 
 var dbLoc = os.Getenv("TODO_DATABASE_LOCATION")
@@ -21,4 +21,3 @@ var Application = App{}
 var schema = `
 CREATE TABLE IF NOT EXISTS todo (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name varchar(255));
 `
-

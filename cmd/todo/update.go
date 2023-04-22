@@ -14,7 +14,7 @@ var updateCmd = &cobra.Command{
 	Use:     "update",
 	Aliases: []string{"change", "mv", "chng", "move"},
 	Short:   "Update a todo",
-	Args: cobra.MinimumNArgs(2),
+	Args:    cobra.MinimumNArgs(2),
 	Run:     update,
 }
 

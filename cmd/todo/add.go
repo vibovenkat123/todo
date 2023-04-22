@@ -13,7 +13,7 @@ var addCmd = &cobra.Command{
 	Use:     "add",
 	Aliases: []string{"create", "touch", "make", "mk"},
 	Short:   "Create a todo",
-	Args: cobra.MinimumNArgs(1),
+	Args:    cobra.MinimumNArgs(1),
 	Run:     add,
 }
 

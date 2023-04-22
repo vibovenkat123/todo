@@ -54,6 +54,9 @@ func (app *App) GetAllTodos() ([]Todo, error) {
 	}
 	todos := []Todo{}
 	rows, err := app.DB.Query("SELECT id, name FROM TODO")
+	if err != nil {
+		return nil, fmt.Errorf("Error while getting all the rows: %s", err)
+	}
 	defer rows.Close()
 
 	for rows.Next() {
@@ -69,7 +72,6 @@ func (app *App) GetAllTodos() ([]Todo, error) {
 		}
 		todos = append(todos, todo)
 	}
-
 	return todos, nil
 }
 

@@ -1,5 +1,7 @@
 package todo
-import ( "fmt"
+
+import (
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"

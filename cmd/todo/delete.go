@@ -13,7 +13,7 @@ var deleteCmd = &cobra.Command{
 	Use:     "finish",
 	Aliases: []string{"delete", "remove", "del", "rm"},
 	Short:   "removes a todo",
-	Args: cobra.ExactArgs(1),
+	Args:    cobra.ExactArgs(1),
 	Run:     delete,
 }
 
